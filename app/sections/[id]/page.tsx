@@ -18,7 +18,7 @@ export async function generateMetadata({
   const section = getSection(id);
   if (!section) return { title: "Sección no encontrada" };
   return {
-    title: `${section.title} — Galería Neón`,
+    title: section.title,
     description: section.description,
   };
 }

@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Galería Neón — Portfolio 3D",
+  title: {
+    default: "Rene Santos CV",
+    template: "%s — Rene Santos CV",
+  },
   description:
     "Portfolio personal interactivo: recorre una galería 3D con pinturas de neón que muestran mi curriculum.",
 };
