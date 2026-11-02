@@ -1,5 +1,6 @@
 import type { Section } from "@/content/sections";
 import type { CSSProperties } from "react";
+import ContactList from "./ContactList";
 
 export default function SectionContent({ section }: { section: Section }) {
   const style = { "--neon": section.color } as CSSProperties;
@@ -72,6 +73,8 @@ export default function SectionContent({ section }: { section: Section }) {
           ))}
         </div>
       )}
+
+      {section.contact && <ContactList items={section.contact} color={section.color} />}
 
       {section.links && (
         <ul className="flex flex-wrap gap-x-5 gap-y-2">

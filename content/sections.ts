@@ -23,6 +23,21 @@ export interface LinkItem {
   url: string;
 }
 
+export interface ContactItem {
+  icon: string;
+  label: string;
+  /** Valor que se muestra (y que se copia si es copiable). */
+  value: string;
+  /** Valor a copiar si difiere del mostrado. */
+  copyValue?: string;
+  /** Link al que se puede entrar desde el dato. */
+  url?: string;
+  /** Texto del link secundario (p. ej. "abrir" / "llamar"). */
+  urlLabel?: string;
+  /** El click principal copia el valor al portapapeles. */
+  copyable?: boolean;
+}
+
 export interface Section {
   id: SectionId;
   title: string;
@@ -32,6 +47,7 @@ export interface Section {
   items: SectionItem[];
   projects?: ProjectItem[];
   links?: LinkItem[];
+  contact?: ContactItem[];
 }
 
 export const sections: Section[] = [
@@ -150,14 +166,44 @@ export const sections: Section[] = [
     subtitle: "Hablemos",
     color: "#39ff8b",
     description:
-      "¿Interesado en trabajar juntos? Escríbeme por cualquiera de estos canales.",
+      "¿Interesado en trabajar juntos? Cualquiera de estos medios sirve; el teléfono y el correo se copian al hacer click.",
     items: [],
-    links: [
-      { label: "Email", url: "mailto:renealejanso@gmail.com" },
-      { label: "GitHub", url: "https://github.com/PHDRENIS" },
+    contact: [
       {
+        icon: "📞",
+        label: "Teléfono",
+        value: "238 102 2171",
+        copyValue: "2381022171",
+        url: "tel:+522381022171",
+        urlLabel: "llamar",
+        copyable: true,
+      },
+      {
+        icon: "📧",
+        label: "Email",
+        value: "renealejanso@gmail.com",
+        url: "mailto:renealejanso@gmail.com",
+        urlLabel: "abrir",
+        copyable: true,
+      },
+      {
+        icon: "📍",
+        label: "Ubicación",
+        value: "Puebla, Puebla",
+      },
+      {
+        icon: "💻",
+        label: "GitHub",
+        value: "github.com/PHDRENIS",
+        url: "https://github.com/PHDRENIS",
+        urlLabel: "abrir",
+      },
+      {
+        icon: "🔗",
         label: "LinkedIn",
+        value: "linkedin.com/in/rene-alejandro-santos-mora-a35902357",
         url: "https://www.linkedin.com/in/rene-alejandro-santos-mora-a35902357/",
+        urlLabel: "abrir",
       },
     ],
   },
