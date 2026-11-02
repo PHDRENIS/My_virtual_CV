@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05050a;
+  --foreground: #e8e8f0;
 }
 
 @theme inline {
@@ -12,15 +12,61 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  height: 100%;
 }
 
 body {
+  min-height: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.world-canvas canvas {
+  cursor: grab;
+}
+
+.world-canvas canvas:active {
+  cursor: grabbing;
+}
+
+.vignette {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 60%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+.dark-room .vignette {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.05) 45%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.neon-pill {
+  border: 1px solid color-mix(in srgb, var(--neon, #00e5ff) 70%, transparent);
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--neon, #00e5ff) 35%, transparent),
+    inset 0 0 12px color-mix(in srgb, var(--neon, #00e5ff) 12%, transparent);
+  color: var(--neon, #00e5ff);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--neon, #00e5ff) 60%, transparent);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.neon-pill:hover {
+  box-shadow:
+    0 0 22px color-mix(in srgb, var(--neon, #00e5ff) 60%, transparent),
+    inset 0 0 16px color-mix(in srgb, var(--neon, #00e5ff) 20%, transparent);
+  transform: translateY(-1px);
+}
+
+.neon-title {
+  text-shadow: 0 0 18px var(--neon, #00e5ff);
 }
