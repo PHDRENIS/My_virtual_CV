@@ -4,6 +4,14 @@ Portafolio web interactivo: una **galería de arte en 3D** con estilo neón dond
 
 > Nombre del proyecto: `neon-portfolio` · Basado en **Next.js (App Router, export estático)** + **Three.js**.
 
+## Capturas
+
+| Intro "Bienvenido a mi vida" | La galería |
+| --- | --- |
+| ![Intro](docs/intro.png) | ![Galería](docs/galeria.png) |
+| **Sección Resume (cuadro central)** | **Sección de proyectos** |
+| ![Resume](docs/seccion-resume.png) | ![Proyectos](docs/seccion-proyectos.png) |
+
 ## Características
 
 - **Intro animada**: pantalla de bienvenida con "Bienvenido a mi vida"; al hacer click en cualquier parte, el fondo blanco se abre como cortinas revelando la habitación (se muestra en cada carga/recarga).
